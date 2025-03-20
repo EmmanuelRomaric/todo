@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+<body>
+    <p>Hello  @{{request.user}}</p>
+    <a href="{% url 'core:create_task' %}">Create task</a>
+    {% for task in tasks %}
+    <h2>{{task.title}}</h2>
+    <p>{{task.description}}</p>
+    <p>{{task.date}}</p>
+    <a href="{% url 'core:update_task' task.id %}">Update</a>
+    <a href="{% url 'core:delete_task' task.id %}">Delete</a>
+    {% endfor %}
+</body>
+</html>
