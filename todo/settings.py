@@ -77,12 +77,11 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "todo_db",
-        "USER": "postgres",
-        "PASSWORD": "Hellog@71994",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "PGHOST":"ep-shy-hill-a5sjwm7m-pooler.us-east-2.aws.neon.tech",
+        "PGHOST_UNPOOLED":"ep-shy-hill-a5sjwm7m.us-east-2.aws.neon.tech",
+        "PGUSER":"neondb_owner",
+        "PGDATABASE":"neondb",
+        "PGPASSWORD":"npg_sGeuOC0ZgS1T",
     }
 }
 
