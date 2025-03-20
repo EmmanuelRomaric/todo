@@ -2,12 +2,27 @@ from django.shortcuts import render
 from .models import Task
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 
+def mysignup(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        if password1 == password2:
+            user = User.objects.create_user(username, email, password1)
+            login(request, user)
+            return HttpResponseRedirect(reverse("core:index"))
+    return render(request, 'core/signup.html',)
+
 
 def index(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(user=request.user)
     context = {'tasks':tasks}
     return render(request, "core/index.html", context )
 
