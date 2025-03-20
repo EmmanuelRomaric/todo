@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "todo_db"
+        "NAME": "todo_db",
         "PGHOST":"ep-shy-hill-a5sjwm7m-pooler.us-east-2.aws.neon.tech",
         "PGHOST_UNPOOLED":"ep-shy-hill-a5sjwm7m.us-east-2.aws.neon.tech",
         "PGUSER":"neondb_owner",
