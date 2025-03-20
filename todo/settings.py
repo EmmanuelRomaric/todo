@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xafm0)6j)_0jnhu&5qz!@j%$)b)kcmafa8*p_izu0e1gm7xf6g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
 
 # Application definition
@@ -77,13 +77,9 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 
 DATABASES = {
 "default": {
-    "ENGINE": "django.db.backends.postgresql",
-    "NAME": "todo_db",
-    "USER": "postgres",
-    "PASSWORD": "Hellog@71994",
-    "HOST": "127.0.0.1",
-    "PORT": "5432",
-}
+    "ENGINE": "django.db.backends.sqlite3",
+    "NAME": "db.sqlite3",
+    }
 }
 
 
